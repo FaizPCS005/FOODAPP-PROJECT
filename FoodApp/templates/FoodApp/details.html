@@ -1,0 +1,29 @@
+``{% extends "FoodApp/base.html" %}
+{% block body %}
+<div class="row">
+    <div class="col-md-6">
+    <img
+       src="{{item_list.item_image}}"
+       height="300px"
+       class="card"
+       style="border-radius:58px;
+       border:5px solid black"
+       />
+<h1> {{item_list.item_name1}}</h1>
+{{item_list.item_desc1}}
+<b>Rs.{{item_list.item_price1}}</b>
+</div>
+<div class="col-md-2">
+    <a href={% url 'FoodApp:additem' %} class="btn-btn-success"
+    style="background-color:wheat;color:green;border-radius:1px; border:2px solid black">ADD ITEM</a>
+    <br><br>
+    <a href={% url 'FoodApp:update' item_list.id %} class="btn-btn-success"
+    style="background-color:wheat;color:green;border-radius:1px; border:2px solid black">UPDATE ITEM</a>
+    <br><br>
+    <a href={% url 'FoodApp:delete' item_list.id %} class="btn-btn-success"
+    style="background-color:wheat;
+    color:green; border-radius:1px; border:2px solid black">DELETE ITEM</a>
+</div>
+</div>
+</div>
+{% endblock %}

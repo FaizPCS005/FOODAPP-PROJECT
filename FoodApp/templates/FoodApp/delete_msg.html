@@ -1,0 +1,19 @@
+``{% extends "FoodApp/base.html" %}
+{%block body%}
+<form method='POST'>
+    {% csrf_token %}
+    <h1>Are You Sure U Want To delete this Item??? {{item.item_name1}}</h1>
+    <img
+    src="{{item.item_image}}"
+    height="300px"
+    class="card"
+    style="border-radius:58px;
+    border:5px solid black"
+    />
+    <button style='background-color:black;
+    padding:10px;
+    color:wheat
+    border2px solid black;
+    margin-left:170px;'>Confirm</button>
+</form>
+{%endblock%}
